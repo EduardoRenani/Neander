@@ -1,0 +1,9 @@
+[Inputs]
+=X[7:0]=
+=Y[7:0]=
+=sel[3:0]=
+[Outputs]
+N
+Z
+=output[7:0]=
+[BiDir]

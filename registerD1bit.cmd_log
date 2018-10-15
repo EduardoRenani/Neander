@@ -1,0 +1,2 @@
+vhdtdtfi -lib work registerD1bit.vhd -prj Neander -o registerD1bit.spl -module registerD1bit -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 -w registerD1bit.spl /home/eduardo/Downloads/Neander/registerD1bit.sym 

@@ -1,0 +1,13 @@
+
+
+
+// Instantiate the module
+programCounter instance_name (
+    .clk(clk), 
+    .reset_n(reset_n), 
+    .load(load), 
+    .D(D), 
+    .Q(Q)
+    );
+
+

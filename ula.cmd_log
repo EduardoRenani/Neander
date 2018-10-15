@@ -1,0 +1,2 @@
+vhdtdtfi -lib work ula.vhd -prj Neander -o ula.spl -module ula -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 -w ula.spl /home/eduardo/Downloads/Neander/ula.sym 

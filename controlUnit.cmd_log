@@ -1,0 +1,3 @@
+xst -intstyle ise -ifn "/home/eduardo/Downloads/Neander/controlUnit.xst" -ofn "/home/eduardo/Downloads/Neander/controlUnit.syr" 
+vhdtdtfi -lib work controlUnit.vhd -prj Neander -o controlUnit.spl -module controlUnit -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 controlUnit.spl /home/eduardo/Downloads/Neander/controlUnit.sym 

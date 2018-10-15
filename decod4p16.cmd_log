@@ -1,0 +1,2 @@
+vhdtdtfi -lib work decod4p16.vhd -prj Neander -o decod4p16.spl -module decod4p16 -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 decod4p16.spl /home/eduardo/Downloads/Neander/decod4p16.sym 

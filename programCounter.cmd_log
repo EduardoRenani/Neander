@@ -1,0 +1,9 @@
+xst -intstyle ise -ifn "/home/eduardo/Downloads/Neander/programCounter.xst" -ofn "/home/eduardo/Downloads/Neander/programCounter.syr" 
+xst -intstyle ise -ifn "/home/eduardo/Downloads/Neander/programCounter.xst" -ofn "/home/eduardo/Downloads/Neander/programCounter.syr" 
+vhdtdtfi -prj Neander -o /home/eduardo/Downloads/Neander/programCounter.tfi -module programCounter -template /opt/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror -lib work programCounter.vhd 
+vhdtdtfi -lib work programCounter.vhd -prj Neander -o programCounter.spl -module programCounter -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 programCounter.spl /home/eduardo/Downloads/Neander/programCounter.sym 
+vhdtdtfi -prj Neander -o /home/eduardo/Downloads/Neander/programCounter.tfi -module programCounter -template /opt/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror -lib work programCounter.vhd 
+vhdtdtfi -prj Neander -o /home/eduardo/Downloads/Neander/programCounter.tfi -module programCounter -template /opt/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror -lib work programCounter.vhd 
+vhdtdtfi -lib work programCounter.vhd -prj Neander -o programCounter.spl -module programCounter -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 -w programCounter.spl /home/eduardo/Downloads/Neander/programCounter.sym 

@@ -1,0 +1,8 @@
+vhdtdtfi -lib work registerD8bit.vhd -prj Neander -o registerD8bit.spl -module registerD8bit -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 registerD8bit.spl /home/eduardo/Downloads/Neander/registerD8bit.sym 
+vhdtdtfi -lib work registerD8bit.vhd -prj Neander -o registerD8bit.spl -module registerD8bit -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 registerD8bit.spl /home/eduardo/Downloads/Neander/registerD8bit.sym 
+vhdtdtfi -lib work registerD8bit.vhd -prj Neander -o registerD8bit.spl -module registerD8bit -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 registerD8bit.spl /home/eduardo/Downloads/Neander/registerD8bit.sym 
+vhdtdtfi -lib work registerD8bit.vhd -prj Neander -o registerD8bit.spl -module registerD8bit -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 -w registerD8bit.spl /home/eduardo/Downloads/Neander/registerD8bit.sym 

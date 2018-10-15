@@ -1,0 +1,15 @@
+[Inputs]
+=opcode[3:0]=
+[Outputs]
+oNOP
+oSTA
+oLDA
+oADD
+oOR
+oAND
+oNOT
+oJMP
+oJN
+oJZ
+oHLT
+[BiDir]

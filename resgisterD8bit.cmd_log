@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/eduardo/Downloads/Neander/resgisterD8bit.xst" -ofn "/home/eduardo/Downloads/Neander/resgisterD8bit.syr" 
