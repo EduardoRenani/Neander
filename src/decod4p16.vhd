@@ -31,17 +31,17 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity decod4p16 is
     Port ( opcode : in  STD_LOGIC_VECTOR (3 downto 0);
-           oNOP : out  STD_LOGIC;
-           oSTA : out  STD_LOGIC;
-           oLDA : out  STD_LOGIC;
-           oADD : out  STD_LOGIC;
-           oOR : out  STD_LOGIC;
-           oAND : out  STD_LOGIC;
-           oNOT : out  STD_LOGIC;
-           oJMP : out  STD_LOGIC;
-           oJN : out  STD_LOGIC;
-           oJZ : out  STD_LOGIC;
-           oHLT : out  STD_LOGIC);
+           iNOP : out  STD_LOGIC;
+           iSTA : out  STD_LOGIC;
+           iLDA : out  STD_LOGIC;
+           iADD : out  STD_LOGIC;
+           iOR : out  STD_LOGIC;
+           iAND : out  STD_LOGIC;
+           iNOT : out  STD_LOGIC;
+           iJMP : out  STD_LOGIC;
+           iJN : out  STD_LOGIC;
+           iJZ : out  STD_LOGIC;
+           iHLT : out  STD_LOGIC);
 end decod4p16;
 
 architecture Behavioral of decod4p16 is
@@ -50,42 +50,42 @@ begin
 
 process(opcode)
 begin
-	oNOP <= '0';
-	oSTA <= '0';
-	oLDA <= '0';
-	oADD <= '0';
-	oOR <= '0';
-	oAND <= '0';
-	oNOT <= '0';
-	oJMP <= '0';
-	oJN <= '0';
-	oJZ <= '0';
-	oHLT <= '0';
+	iNOP <= '0';
+	iSTA <= '0';
+	iLDA <= '0';
+	iADD <= '0';
+	iOR <= '0';
+	iAND <= '0';
+	iNOT <= '0';
+	iJMP <= '0';
+	iJN <= '0';
+	iJZ <= '0';
+	iHLT <= '0';
 	case opcode is
 		when "0000" =>
-			oNOP <= '1';
+			iNOP <= '1';
 		when "0001" =>
-			oSTA <= '1';
+			iSTA <= '1';
 		when "0010" =>
-			oLDA <= '1';
+			iLDA <= '1';
 		when "0011" =>
-			oADD <= '1';
+			iADD <= '1';
 		when "0100" =>
-			oOR <= '1';
+			iOR <= '1';
 		when "0101" =>
-			oAND <= '1';
+			iAND <= '1';
 		when "0110" =>
-			oNOT <= '1';
+			iNOT <= '1';
 		when "1000" =>
-			oJMP <= '1';
+			iJMP <= '1';
 		when "1001" =>
-			oJN <= '1';
+			iJN <= '1';
 		when "1010" =>
-			oJZ <= '1';
+			iJZ <= '1';
 		when "1111" =>
-			oHLT <= '1';
+			iHLT <= '1';
 		when others =>
-			oHLT <= '1';
+			iHLT <= '1';
 	end case;
 end process;
 

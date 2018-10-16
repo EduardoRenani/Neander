@@ -1,5 +1,5 @@
-set -tmpdir "/home/eduardo/Downloads/Neander/xst/projnav.tmp"
-set -xsthdpdir "/home/eduardo/Downloads/Neander/xst"
+set -tmpdir "C:/Neander/src/xst/projnav.tmp"
+set -xsthdpdir "C:/Neander/src/xst"
 run -compileonly yes
 -p xc7a100t-3-csg324
 -top registerD1bit
@@ -12,6 +12,7 @@ run -compileonly yes
 -rtlview Yes
 -glob_opt AllClockNets
 -read_cores YES
+-sd {"ipcore_dir"  }
 -write_timing_constraints NO
 -cross_clock_analysis NO
 -hierarchy_separator /

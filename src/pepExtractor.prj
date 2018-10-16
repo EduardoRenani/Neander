@@ -1,1 +1,7 @@
+work	"Neander.vhd"
+work	"controlUnit.vhd"
+work	"decod4p16.vhd"
+work	"programCounter.vhd"
 work	"registerD1bit.vhd"
+work	"registerD8bit.vhd"
+work	"ula.vhd"

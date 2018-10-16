@@ -8,23 +8,25 @@
 <msg type="info" file="sim" num="172" delta="old" >Generating IP...
 </msg>
 
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">The Memory Initialization vector can contain between 1 to Write</arg>
+</msg>
+
+<msg type="warning" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">A core named &apos;memory&apos; already exists in the project. Output products for this core may be overwritten.</arg>
+</msg>
+
+<msg type="warning" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">A core named &apos;memory&apos; already exists in the project. Output products for this core may be overwritten.</arg>
+</msg>
+
 <msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Pre-processing HDL files for &apos;memory&apos;...</arg>
 </msg>
 
-<msg type="error" file="sim" num="938" delta="old" >Error while preparing for IP customization
+<msg type="warning" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Overwriting existing file C:/Neander/src/ipcore_dir/tmp/_cg/memory/doc/blk_mem_gen_v7_3_vinfo.html with file from view xilinx_documentation</arg>
 </msg>
 
-<msg type="error" file="sim" num="0" delta="new" >Failed to initialize IP model.
+<msg type="info" file="sim" num="949" delta="new" >Finished generation of ASY schematic symbol.
 </msg>
 
-<msg type="warning" file="sim" num="946" delta="old" >Failed to initialise IP Model for ASY schematic symbol
-</msg>
-
-<msg type="error" file="sim" num="944" delta="old" >Failed to generate ASY schematic symbol.
-</msg>
-
-<msg type="error" file="sim" num="0" delta="new" >Failed to generate &apos;memory&apos;.  Failed to initialise IP Model for ASY schematic symbol
-
+<msg type="info" file="sim" num="948" delta="new" >Finished FLIST file generation.
 </msg>
 
 </messages>

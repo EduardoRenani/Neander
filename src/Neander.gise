@@ -22,9 +22,18 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="Neander.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Neander.prj"/>
-    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Neander.stx"/>
-    <file xil_pn:fileType="FILE_XST" xil_pn:name="Neander.xst"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="Neander.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="Neander.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="Neander.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="Neander.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Neander.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="Neander.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="Neander.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="Neander.xst"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Neander_beh.prj"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="Neander_envsettings.html"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="Neander_summary.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Neander_xst.xrpt"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="controlUnit.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="controlUnit.lso"/>
@@ -43,9 +52,14 @@
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="decod4p16.stx"/>
     <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="decod4p16.sym" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="decod4p16.xst"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="ipcore_dir/coregen.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="mux2p1.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="mux2p1.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="mux2p1.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="neanderTestbench_beh.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="neanderTestbench_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="programCounter.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="programCounter.lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="programCounter.ngc"/>
@@ -83,15 +97,136 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="resgisterD8bit.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="resgisterD8bit_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="resgisterD8bit_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ula.prj"/>
     <file xil_pn:fileType="FILE_SPL" xil_pn:name="ula.spl"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ula.stx"/>
     <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="ula.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="ula.xst"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1539542857" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1539542857">
+    <transform xil_pn:end_ts="1539660940" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1539660940">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1539660940" xil_pn:in_ck="-2062514116169452744" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1539660940">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="Neander.vhd"/>
+      <outfile xil_pn:name="controlUnit.vhd"/>
+      <outfile xil_pn:name="decod4p16.vhd"/>
+      <outfile xil_pn:name="neanderTestbench.vhd"/>
+      <outfile xil_pn:name="programCounter.vhd"/>
+      <outfile xil_pn:name="registerD1bit.vhd"/>
+      <outfile xil_pn:name="registerD8bit.vhd"/>
+      <outfile xil_pn:name="ula.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1539660940" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-5657415670426621187" xil_pn:start_ts="1539660940">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1539660940" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-3827639877791836005" xil_pn:start_ts="1539660940">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1539660940" xil_pn:in_ck="-2674334883656940480" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="1154799091947220528" xil_pn:start_ts="1539660940">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="ipcore_dir/memory.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/memory.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1539660940" xil_pn:in_ck="634470525542623812" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1539660940">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="Neander.vhd"/>
+      <outfile xil_pn:name="controlUnit.vhd"/>
+      <outfile xil_pn:name="decod4p16.vhd"/>
+      <outfile xil_pn:name="ipcore_dir/memory.v"/>
+      <outfile xil_pn:name="neanderTestbench.vhd"/>
+      <outfile xil_pn:name="programCounter.vhd"/>
+      <outfile xil_pn:name="registerD1bit.vhd"/>
+      <outfile xil_pn:name="registerD8bit.vhd"/>
+      <outfile xil_pn:name="ula.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1539660946" xil_pn:in_ck="634470525542623812" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="702484363308542752" xil_pn:start_ts="1539660940">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputChanged"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="neanderTestbench_beh.prj"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1539660966" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-536001383948812733" xil_pn:start_ts="1539660966">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+    </transform>
+    <transform xil_pn:end_ts="1539657615" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1539657615">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1539657615" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-3594172386856273912" xil_pn:start_ts="1539657615">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1539660493" xil_pn:in_ck="-2674334883656940480" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="1154799091947220528" xil_pn:start_ts="1539660493">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1539657615" xil_pn:in_ck="3980669207868729007" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1539657615">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1539657615" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-6852240780673267158" xil_pn:start_ts="1539657615">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1539657615" xil_pn:in_ck="3980669207868729007" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="3206529612922900429" xil_pn:start_ts="1539657615">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1539657615" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-8795311696245664582" xil_pn:start_ts="1539657615">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1539660708" xil_pn:in_ck="-1499619549568041289" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-5190045621962781779" xil_pn:start_ts="1539660693">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="Neander.lso"/>
+      <outfile xil_pn:name="Neander.ngc"/>
+      <outfile xil_pn:name="Neander.ngr"/>
+      <outfile xil_pn:name="Neander.prj"/>
+      <outfile xil_pn:name="Neander.stx"/>
+      <outfile xil_pn:name="Neander.syr"/>
+      <outfile xil_pn:name="Neander.xst"/>
+      <outfile xil_pn:name="Neander_beh.prj"/>
+      <outfile xil_pn:name="Neander_xst.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="controlUnit.ngr"/>
+      <outfile xil_pn:name="neanderTestbench_stx_beh.prj"/>
+      <outfile xil_pn:name="programCounter.ngr"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
     </transform>
   </transforms>
 

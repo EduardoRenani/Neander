@@ -1,6 +1,9 @@
-set -tmpdir "/home/eduardo/Downloads/Neander/xst/projnav.tmp"
-set -xsthdpdir "/home/eduardo/Downloads/Neander/xst"
-run -compileonly yes
+set -tmpdir "xst/projnav.tmp"
+set -xsthdpdir "xst"
+run
+-ifn Neander.prj
+-ofn Neander
+-ofmt NGC
 -p xc7a100t-3-csg324
 -top Neander
 -opt_mode Speed
@@ -12,6 +15,7 @@ run -compileonly yes
 -rtlview Yes
 -glob_opt AllClockNets
 -read_cores YES
+-sd {"ipcore_dir"  }
 -write_timing_constraints NO
 -cross_clock_analysis NO
 -hierarchy_separator /
@@ -47,4 +51,3 @@ run -compileonly yes
 -iob Auto
 -equivalent_register_removal YES
 -slice_utilization_ratio_maxmargin 5
--ifn Neander.prj

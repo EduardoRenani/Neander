@@ -19,10 +19,9 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
@@ -30,13 +29,26 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity Neander is
-    Port ( clk : in  STD_LOGIC;
-           reset_n : in  STD_LOGIC);
+	Port ( 
+		clk : in  STD_LOGIC;
+      reset_n : in  STD_LOGIC;
+		acumulador : out std_logic_vector(7 downto 0);
+		pc : out std_logic_vector(7 downto 0)
+	);
 end Neander;
 
 architecture Behavioral of Neander is
-
-	signal mux_rem : std_logic;
+	
+	COMPONENT memory
+		PORT (
+		clka: in std_logic;
+		wea: in std_logic_vector(0 downto 0);
+		addra: in std_logic_vector(7 downto 0);
+		dina: in std_logic_vector(7 downto 0);
+		clkb: in std_logic;
+		addrb: in std_logic_vector(7 downto 0);
+		doutb: out std_logic_vector(7 downto 0));
+	END COMPONENT;
 	
 	COMPONENT programCounter
 		PORT( 
@@ -44,8 +56,8 @@ architecture Behavioral of Neander is
 			reset_n : IN STD_LOGIC;
 			load : IN STD_LOGIC;
 			inc : IN STD_LOGIC;
-			D : IN STD_LOGIC;
-			Q : OUT STD_LOGIC
+			D : IN STD_LOGIC_VECTOR (7 downto 0);
+			Q : OUT STD_LOGIC_VECTOR (7 downto 0)
 		); 
 	END COMPONENT;
 	
@@ -55,7 +67,7 @@ architecture Behavioral of Neander is
          reset_n : in  STD_LOGIC;
          load : in  STD_LOGIC;
          D : in  STD_LOGIC;
-         Q : out  STD_LOGIC_VECTOR
+         Q : out  STD_LOGIC
 		);
 	END COMPONENT;
 	
@@ -69,9 +81,9 @@ architecture Behavioral of Neander is
 		);
 	END COMPONENT;
 	
-	COMPONENT decod16p1
+	COMPONENT decod4p16
 		PORT ( 
-			opcode : in  STD_LOGIC_VECTOR (15 downto 0);
+			opcode : in  STD_LOGIC_VECTOR (3 downto 0);
 			iNOP : out  STD_LOGIC;
 			iSTA : out  STD_LOGIC;
 			iLDA : out  STD_LOGIC;
@@ -121,16 +133,51 @@ architecture Behavioral of Neander is
 		PORT ( 
 			X : in  STD_LOGIC_VECTOR (7 downto 0);
 			Y : in  STD_LOGIC_VECTOR (7 downto 0);
-			sel : in  STD_LOGIC_VECTOR (3 downto 0);
+			sel : in  STD_LOGIC_VECTOR (2 downto 0);
 			N : out  STD_LOGIC;
 			Z : out  STD_LOGIC;
 			output : out  STD_LOGIC_VECTOR (7 downto 0)
 		);
-	END COMPONENT;	
+	END COMPONENT;
+	
+	signal mux_rem : std_logic_vector (7 downto 0);
+	signal cg_PC : std_logic;
+	signal out_PC : std_logic_vector (7 downto 0);
+	signal inc_PC : std_logic;
+	signal cg_REM : std_logic;
+	signal out_REM : std_logic_vector (7 downto 0);
+	signal cg_RDM : std_logic;
+	signal out_RDM : std_logic_vector (7 downto 0);
+	signal cg_AC : std_logic;
+	signal out_AC : std_logic_vector (7 downto 0);
+	signal sel_ULA : std_logic_vector (2 downto 0);
+	signal out_ULA : std_logic_vector (7 downto 0);
+	signal N : std_logic;
+	signal Z : std_logic;
+	signal cg_NZ : std_logic;
+	signal out_N : std_logic;
+	signal out_Z : std_logic;
+	signal cg_RI : std_logic;
+	signal out_RI : std_logic_vector (7 downto 0);
+	signal oNOP : std_logic;
+	signal oSTA : std_logic;
+	signal oLDA : std_logic;
+	signal oADD : std_logic;
+	signal oOR : std_logic;
+	signal oAND : std_logic;
+	signal oNOT : std_logic;
+	signal oJMP : std_logic;
+	signal oJN : std_logic;
+	signal oJZ : std_logic;
+	signal oHLT : std_logic;
+	signal iWrite : std_logic_vector (0 downto 0);
+	signal iRead : std_logic_vector (0 downto 0);
+	signal out_MEM : std_logic_vector (7 downto 0);
+	signal sel_REM : std_logic;
 	
 begin
 
-	PC : programCounter PORT MAP(
+	pogramCounterREG : programCounter PORT MAP(
 		clk => clk,
 		reset_n => reset_n,
 		load => cg_PC,
@@ -163,7 +210,7 @@ begin
 		Q => out_AC
 	);
 	
-	ULA : ula PORT MAP(
+	LAunit : ula PORT MAP(
 		X => out_AC,
 		Y => out_RDM,
 		sel => sel_ULA,
@@ -197,7 +244,7 @@ begin
 	);
 	
 	decoder : decod4p16 PORT MAP (
-		opcode => outRI(7 downto 4),
+		opcode => out_RI(7 downto 4),
 		iNOP => oNOP,
 		iSTA => oSTA,
 		iLDA => oLDA,
@@ -236,13 +283,31 @@ begin
 		sel_ULA => sel_ULA,
 		N => out_N,
 		Z => out_Z,
-		oWrite => iWrite,
-		oRead => iRead
+		oWrite => iWrite(0),
+		oRead => iRead(0)
 	);
 	
-	mux_rem <= (out_PC and not(sel_REM)) or (out_RDM and sel_REM); -- Sum of product mux implementation
-
-
-
+	process(sel_REM)
+	begin
+		if sel_REM = '0' then
+			mux_rem <= out_PC;
+		else 
+			mux_rem <= out_RDM;
+		end if;
+	end process;
+	
+	memAB : memory PORT MAP (
+		clka => clk,
+		wea => iWrite,
+		addra => out_REM,
+		dina => out_AC,
+		clkb => clk,
+		addrb => out_REM,
+		doutb => out_MEM
+	);
+	
+	acumulador <= out_AC;
+	pc <= out_PC;
+	
 end Behavioral;
 

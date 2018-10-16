@@ -1,5 +1,12 @@
 INFO:sim:172 - Generating IP...
+Applying current project options...
+Finished applying current project options.
+ERROR:sim - The Memory Initialization vector can contain between 1 to Write
+WARNING:sim - A core named 'memory' already exists in the project. Output
+   products for this core may be overwritten.
 Resolving generics for 'memory'...
+WARNING:sim - A core named 'memory' already exists in the project. Output
+   products for this core may be overwritten.
 Applying external generics to 'memory'...
 Delivering associated files for 'memory'...
 Delivering EJava files for 'memory'...
@@ -9,12 +16,43 @@ Running synthesis for 'memory'
 Running ngcbuild...
 Writing VEO instantiation template for 'memory'...
 Writing Verilog behavioral simulation model for 'memory'...
+WARNING:sim - Overwriting existing file
+   C:/Neander/src/ipcore_dir/tmp/_cg/memory/doc/blk_mem_gen_v7_3_vinfo.html with
+   file from view xilinx_documentation
+Delivered 1 file into directory C:/Neander/src/ipcore_dir/tmp/_cg/memory
 Generating ASY schematic symbol...
-ERROR:sim:938 - Error while preparing for IP customization
-ERROR:sim - Failed to initialize IP model.
-WARNING:sim:946 - Failed to initialise IP Model for ASY schematic symbol
-ERROR:sim:944 - Failed to generate ASY schematic symbol.
-ERROR:sim - Failed to generate 'memory'.  Failed to initialise IP Model for ASY
-   schematic symbol
-
+INFO:sim:949 - Finished generation of ASY schematic symbol.
+Generating SYM schematic symbol for 'memory'...
+Generating metadata file...
+Regenerating ISE project file for 'memory'...
+Generating ISE project...
+XCO file found: memory.xco
+XMDF file found: memory_xmdf.tcl
+Adding C:/Neander/src/ipcore_dir/tmp/_cg/memory.asy -view all -origin_type
+imported
+Adding C:/Neander/src/ipcore_dir/tmp/_cg/memory.ngc -view all -origin_type
+created
+Checking file "C:/Neander/src/ipcore_dir/tmp/_cg/memory.ngc" for project device
+match ...
+File "C:/Neander/src/ipcore_dir/tmp/_cg/memory.ngc" device information matches
+project device.
+Adding C:/Neander/src/ipcore_dir/tmp/_cg/memory.sym -view all -origin_type
+imported
+Adding C:/Neander/src/ipcore_dir/tmp/_cg/memory.v -view all -origin_type created
+INFO:HDLCompiler:1845 - Analyzing Verilog file
+   "C:/Neander/src/ipcore_dir/tmp/_cg/memory.v" into library work
+INFO:ProjectMgmt - Parsing design hierarchy completed successfully.
+Adding C:/Neander/src/ipcore_dir/tmp/_cg/memory.veo -view all -origin_type
+imported
+INFO:TclTasksC:2116 - The automatic calculation of top has been turned-off.
+   Please set the new top explicitly by running the "project set top" command.
+   To re-calculate the new top automatically, set the "Auto Implementation Top"
+   property to true.
+Top level has been set to "/memory"
+Generating README file...
+Generating FLIST file...
+INFO:sim:948 - Finished FLIST file generation.
+Launching README viewer...
+Moving files to output directory...
+Finished moving files to output directory
 Wrote CGP file for project 'memory'.

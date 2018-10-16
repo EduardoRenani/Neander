@@ -78,6 +78,8 @@ begin
 		estado <= s0;
 	elsif (rising_edge(clk)) then
 		estado <= proxEstado;
+	else
+		estado <= estado;
 	end if;
 end process;
 

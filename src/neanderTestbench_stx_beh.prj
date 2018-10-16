@@ -1,0 +1,8 @@
+vhdl isim_temp "ula.vhd"
+vhdl isim_temp "registerD8bit.vhd"
+vhdl isim_temp "registerD1bit.vhd"
+vhdl isim_temp "programCounter.vhd"
+vhdl isim_temp "decod4p16.vhd"
+vhdl isim_temp "controlUnit.vhd"
+vhdl isim_temp "Neander.vhd"
+vhdl isim_temp "neanderTestbench.vhd"

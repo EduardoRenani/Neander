@@ -1,0 +1,7 @@
+vhdl work "ula.vhd"
+vhdl work "registerD8bit.vhd"
+vhdl work "registerD1bit.vhd"
+vhdl work "programCounter.vhd"
+vhdl work "decod4p16.vhd"
+vhdl work "controlUnit.vhd"
+vhdl work "Neander.vhd"

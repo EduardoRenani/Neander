@@ -40,7 +40,7 @@ end registerD8bit;
 architecture Behavioral of registerD8bit is
 signal temp	:	std_logic_vector (7 downto 0);
 begin
-	process(clk, reset_n)
+	process(clk, reset_n, temp)
 	begin
 		if reset_n = '1' then
 			temp <= "00000000";

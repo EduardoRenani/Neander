@@ -51,6 +51,7 @@ begin
 				temp <= temp;
 			end if;
 		else
+			temp <= temp;
 		end if;
 	end process;
 Q <= temp;

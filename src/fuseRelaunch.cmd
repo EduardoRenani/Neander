@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Neander/src/neanderTestbench_isim_beh.exe" -prj "C:/Neander/src/neanderTestbench_beh.prj" "work.neanderTestbench" "work.glbl" 
